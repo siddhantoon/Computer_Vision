@@ -36,7 +36,7 @@ if __name__ == '__main__':
 
     # image = cv2.imread("imgs/opencv_frame_4.jpg")
     # img = np.copy(image)
-    bg = cv2.imread("backgroung.jpg")
+    bg = cv2.imread("background.jpg")
     background = np.copy(bg)
 
     cap = cv2.VideoCapture(0)
