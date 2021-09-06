@@ -6,7 +6,6 @@ def capture_image():
 
     cv2.namedWindow("test")
 
-    img_counter = 0
     print("Hit Space to Save Esc to Quit")
 
     while True:
@@ -17,17 +16,15 @@ def capture_image():
         cv2.imshow("test", frame)
 
         k = cv2.waitKey(1)
-        if k % 256 == 27:
-            # ESC pressed
-            print("Escape hit, Quiting...")
-            break
-        elif k % 256 == 32:
+        if k % 256 == 32:
             # SPACE pressed
-            img_name = "opencv_frame_{}.jpg".format(img_counter)
+            img_name = "background.jpg"
             cv2.imwrite(img_name, frame)
-            print("{} written!".format(img_name))
-            img_counter += 1
-
+            print("background image saved !")
+            break
+        elif k % 256 == 27:
+            print("Closing without saving image.")
+            break
     cam.release()
 
     cv2.destroyAllWindows()
